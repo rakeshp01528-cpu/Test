@@ -18,6 +18,7 @@ def calculate_age():
     # Use the real current year dynamically
     current_year = __import__('datetime').datetime.now().year
     age = current_year - birth_year
+    age_in_months = age * 12
 
     if age < 0:
         status = "time traveler"
@@ -27,7 +28,9 @@ def calculate_age():
         status = "adult"
 
     result_var.set(
-        f"Hello, {name}!\nYou are approximately {age} years old ({status})."
+        f"Hello, {name}!\n"
+        f"You are approximately {age} years old ({status}), or "
+        f"about {age_in_months} months old."
     )
 
 
